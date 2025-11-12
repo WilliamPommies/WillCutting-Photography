@@ -1,19 +1,3 @@
-function displayImg(imgs) {
-    const container = document.getElementById("container");
-    if (!container) {
-        console.error("L'élément 'container' n'existe pas dans le DOM.");
-        return;
-    }
-
-    imgs.forEach(img => {
-        const el = document.createElement("img");
-        el.src = `https://drive.google.com/thumbnail?id=${img.id}&sz=w1000`;
-        el.alt = img.alt;
-        el.dataset.tag = img.tag; 
-        container.appendChild(el);
-    });
-}
-
 function filterImages(tag) {
     const imgs = document.querySelectorAll("#container img");
     imgs.forEach(img => {
@@ -49,6 +33,10 @@ function resetFilters() {
   document.getElementById("year-filter").value = "all";
   document.getElementById("genre-filter").value = "all";
   filterCombined();
+  const tourismElements = document.querySelectorAll('[data-tag="Tourisme"]')
+  for(const toursimElement of tourismElements){
+    toursimElement.parentElement.style.display = "none"
+  }
 }
 
 function displayImg(imgs) {
@@ -83,6 +71,9 @@ function displayImg(imgs) {
         el.src = `https://drive.google.com/thumbnail?id=${img.id}&sz=w1000`;
         el.alt = img.alt;
         el.dataset.tag = img.tag;
+        if(img.tag == "Tourisme"){
+          wrapper.style.display = "none"
+        }
 
         el.addEventListener("contextmenu", e => e.preventDefault());
 
