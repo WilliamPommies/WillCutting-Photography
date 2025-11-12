@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./style.css">
+        <script src="https://kit.fontawesome.com/d3e50ba29d.js" crossorigin="anonymous"></script>
+        <style>
+@import url('https://fonts.googleapis.com/css2?family=Climate+Crisis:YEAR@2005&family=Elms+Sans:ital,wght@0,140;1,140&display=swap');
+</style>
+
+    </head>
+    <body>
+        <header>
+            <div class="logoContainer">
+                <img class="logo" src="./assets/signtature.png">
+                <h1>Willcutting Photography</h1>
+            </div>
+            <nav>
+                <a href="#about">About Me</a>
+                <a href="#event">Events</a>
+                <a href="#contact">Contact</a>
+                <a href="https://instagram.com/WillCutting"><i class="fa-brands fa-instagram"></i></a>
+            </nav>
+        </header>
+        <div class="main">
+            <div class="img-ctnr">
+                <h2>PORTFOLIO</h2>
+                <div class="filters">
+                    <button class="reset-btn" onclick="resetFilters()" title="Réinitialiser les filtres">
+                        <i class="fa-solid fa-rotate-right"></i>
+                    </button>
+                    <div class="filter-group">
+                        <label for="year-filter">Trier par année :</label>
+                        <select id="year-filter" onchange="filterCombined(this.value)">
+                            <option value="all">Toutes</option>
+                            <option value="2025">2025</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="genre-filter">Trier par genre :</label>
+                        <select id="genre-filter" onchange="filterCombined(this.value)">
+                            <option value="all">Tous</option>
+                            <option value="Street">Street</option>
+                            <option value="Portrait">Portrait</option>
+                            <option value="Paysage">Paysage</option>
+                            <option value="Concert">Concert</option>
+                            <option value="Animaux">Animaux</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="container"></div>
+            </div>
+            <div class="section" id="about">
+                <h2>About Me</h2>
+                <div>
+                    <img src="./assets/pp.png">
+                    <div>
+                        <p>
+                            Arttiré par l'objectif depuis l'adolescence, armé de mon compact Samsung à essayer de travailler mes compositions sans
+                            vraiment comprendre la technique derrière, c'est en 2019 lors d'un voyage en Suisse que j'ai été pris de passion pour la discipline.
+                            </br></br>
+                            Avec un attrait particulier pour le street photo, suite à une exposition sur le travail de René Burri, je me suis équipé de mon premier
+                            boitier, et suis parti dans les rues capturer des instants bruts qui ne se rejouent pas deux fois, des gens qui ne posent pas, des visages,
+                            des expressions, du quotidien. 
+                            </br></br>
+                            Au fil du temps je me suis ouvert à d'autres genres. J'ai pioché l'inspirations un peu partout, aurpès d'artistes qui avaient eux aussi
+                            d'autres influences et d'autres sensibilité, de ceux qui faisait de la photo de concert de mode ou du portrait. 
+                            </br></br>
+                            Ce site n'a pas pour but de prouver une quelconque forme d'excellence, il sert de capsule temporelle pour moi, un scrapbook numérique,
+                            un album photo à montrer à ma famille, une archive concrète de mon travail et de mon évolution. Pour vous j'espère qu'il sera un voyage.
+                            Déjà dans les différents lieux, parfois inconnus, parfois familiers, que vous y verrez. Mais aussi un Voyage dans mon univers créatif,
+                            un peu personnel. 
+                            </br></br>
+                            <b>Je ne cherche pas la perfection, je cherche du vrai, je cherche la beauté au milieu du chaos.</b>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div id="event" class="section">
+                <h2>Évènements</h2>
+                <p>Pas d'évènement à venir</p>
+            </div>
+            <div id="contact" class="section">
+                <h2>Contact</h2>
+                <span>
+                    <i class="fa-regular fa-envelope"></i>
+                    <a href="mailto:william.pommies@gmail.fr">Contactez-moi !</a>
+                </span>
+                <span>
+                    <i class="fa-brands fa-instagram"></i>
+                    <a href="https://instagram.com/WillCutting">Suivez-moi sur Instagram !</a>
+                </span>
+            </div>
+        </div>
+        </div>
+        <footer>
+            <span>© 2025 — William Pommies / @WillCutting - Toutes les photographies présentées sur ce site sont la propriété exclusive de leur auteur. 
+            Toute reproduction, diffusion ou utilisation sans autorisation préalable est strictement interdite.</span>
+        </footer>
+        <div id="imageModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modalImage">
+        </div>
+        <script src=imgs.js></script>
+    </body>
+</html>
